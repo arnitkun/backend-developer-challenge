@@ -30,7 +30,7 @@ const storage = multer.diskStorage({
     if(extname){
       return cb(null,true);
     } else {
-      cb('Error: Images Only!');
+      cb('Error: csv Only!');
     }
   }
   
@@ -49,9 +49,12 @@ function csvHandler(req, res, next) {
               msg: 'Error: No File Selected!'
             });
           } else {
-            console.log(req.body.currency);
+            // console.log(req.body.currency);
             //parse the file here
-            parseCSV(req.file, req.body.currency);
+
+            // let csvPath = `uploads/${req.file.filename}`;
+            let csvPath = process.cwd() + `/public/uploads/${req.file.filename}`;
+            parseCSV(csvPath, req.body.currency);
             res.render('index', {
               msg: 'File Uploaded!'
             });
