@@ -24,9 +24,7 @@ const storage = multer.diskStorage({
     // Allowed ext
     const filetypes = /csv|CSV/;
     // Check ext
-    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
-    // Check mime
-  
+    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());  
     if(extname){
       return cb(null,true);
     } else {
@@ -37,7 +35,6 @@ const storage = multer.diskStorage({
 
 
 function csvHandler(req, res, next) {
- 
       upload(req, res, (err) => {
         if(err){
           res.render('index', {
@@ -49,10 +46,6 @@ function csvHandler(req, res, next) {
               msg: 'Error: No File Selected!'
             });
           } else {
-            // console.log(req.body.currency);
-            //parse the file here
-
-            // let csvPath = `uploads/${req.file.filename}`;
             let csvPath = process.cwd() + `/public/uploads/${req.file.filename}`;
             parseCSV(csvPath, req.body.currency);
             res.render('index', {
