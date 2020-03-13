@@ -13,3 +13,7 @@
 1. The base currencies supported by the exchangeratesapi.io is rather limited, so the calculations are only done for the 
 supported currencies.
 2. The filtered donations with unsupported currencies can be found in the `filtered.unsupported` list in `/utils/converter.js`. 
+
+## Other projects:
+
+**Subscription service:** https://github.com/arnitkun/payment-api-server
