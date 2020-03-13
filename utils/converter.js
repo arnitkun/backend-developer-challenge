@@ -18,7 +18,13 @@ async function getRates(url, currency) {
         console.log("some error");
     }
 }
-
+/**
+ * Returns an object with 2 lists, one containing supported currency donations and one 
+ * containing unsupported currency donations. 
+ * @param {list} data 
+ * @param {string} url 
+ * @param {string} currency 
+ */
 async function calculate(data, url, currency) {
     let supported = [];
     let unsupported = [];
