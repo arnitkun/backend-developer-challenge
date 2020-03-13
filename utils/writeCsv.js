@@ -1,7 +1,7 @@
 
 const fastcsv = require('fast-csv');
 const fs = require('fs');
-const ws = fs.createWriteStream("out.csv");
+const ws = fs.createWriteStream("Disbursed.csv");
 
 
 function writeCsv(data){
