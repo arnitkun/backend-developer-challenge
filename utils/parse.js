@@ -28,7 +28,7 @@ function parseCSV(csvFile, currency) {
             calculate(data, URL, currency)
             .then(data => {
                 let ans = aggregate(data.supported);
-                console.log(ans);
+                // console.log(ans);
                 writeCsv(ans);
             })
         })
